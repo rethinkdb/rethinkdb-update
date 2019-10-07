@@ -1,0 +1,13 @@
+--- # Update RethinkDB service
+# Turn verbose logging on or off
+logging: false
+# Log directory
+log_dir: logs
+# CherryPy server details
+server:
+    # host is the hostname or IP address on which to listen for any incoming connections.
+    # Set the host to 0.0.0.0 to bind to all network interfaces.
+    host: '127.0.0.1'
+    port: 8888
+# If the Flask app is running behind a proxy, set this to true to enable proper IP address reporting
+proxy: false
