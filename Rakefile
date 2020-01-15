@@ -7,7 +7,7 @@ app_path = "/var/www/update.rethinkdb.com/"
 desc 'Update the nginx configuration'
 task :update_nginx do
     nginx_conf = "nginx.conf"
-    sh "scp #{nginx_conf} #{remote}:/etc/nginx/sites-available/update.rethinkdb.com"
+    sh "scp #{nginx_conf} #{remote}:#{remote_path}"
     sh "ssh #{remote} -t 'sudo service nginx restart'"
 end
 
@@ -21,7 +21,7 @@ task :publish, [:force] do |t, args|
       pretend = "--dry-run"
     end
 
-    src = 'update.rethinkdb.com'
+    src = '.'
     sh "rsync --progress --recursive --delete --compress --human-readable --rsh='ssh' --itemize-changes --delay-updates --copy-links #{pretend} #{src}/ #{remote}:#{remote_path}"
 
     if args.force == "force"
