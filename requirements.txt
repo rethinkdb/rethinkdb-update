@@ -1,6 +1,6 @@
 CherryPy==3.2.4
 Flask==1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 PyYAML==5.4
 Werkzeug==0.15.3
 argparse==1.4.0
