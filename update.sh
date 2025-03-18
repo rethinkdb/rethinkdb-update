@@ -12,4 +12,4 @@ source "$VIRTUALENV_DIR/bin/activate"
 pip install -r requirements.txt
 
 # start the server
-(nohup bash -c "python app/update_server.py >> app.log 2>&1" & sleep 5)
+(nohup bash -c "python3 app/update_server.py >> app.log 2>&1" & sleep 5)
